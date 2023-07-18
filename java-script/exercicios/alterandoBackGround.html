@@ -1,0 +1,34 @@
+<!--Atividade da aula 196-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="" id="elem" onfocus="alterarElem('yellow')" onblur="alterarElem2()">
+
+    <script>
+        var input = document.getElementById("elem")
+        function alterarElem(corFundo){
+            input.style.backgroundColor = corFundo
+
+        }
+
+        function alterarElem2(){
+            const valor = input.value;
+            const numeroCaracteres = valor.length;
+            if(numeroCaracteres < 3){
+            input.style.backgroundColor = "red"
+
+            } else {
+            input.style.backgroundColor = "green"
+
+            }
+            //ou
+            //input.style.backgroundColor = input.value.length < 3 ? "red" : "green"; ← teria exatamente o mesmo resultado
+        }
+    </script>
+</body>
+</html>

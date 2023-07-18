@@ -1,0 +1,31 @@
+<!--Referente a aula 194-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="red" type="button" value="vermelho" onclick="mudarCor('red')">
+    <input id="blue" type="button" value="azul" onclick="mudarCor('blue')">
+    <input id="green" type="button" value="verde" onclick="mudarCor('green')">
+    <script>
+        var red = document.getElementById("red");
+        var blue = document.getElementById("blue");
+        var green = document.getElementById("green");
+
+    
+        function mudarCor (corFundo){
+            if (corFundo === "red") {
+            document.body.style.backgroundColor = "red";
+            } else if (corFundo === "blue") {
+            document.body.style.backgroundColor = "blue";
+            } else if (corFundo === "green") {
+            document.body.style.backgroundColor = "green";
+            }
+        
+        }
+    </script>
+</body>
+</html>

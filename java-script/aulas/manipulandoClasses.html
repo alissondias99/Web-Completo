@@ -1,0 +1,34 @@
+<!--Referente a aula 195-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .classe1{
+            font: normal 15pt arial;
+            color: rgb(106, 236, 193);
+        }
+
+        .classe2{
+            font: italic 23pt Helvetica ;
+            color: blueviolet;
+        }
+    </style>
+</head>
+<body>
+    <p id="elem" class="classe1">Texto normal</p>
+    <input type="button" value="Alterar classe" onclick="mudarClasse()">
+
+    <script>
+       
+
+        function mudarClasse(){
+        var p = document.getElementById("elem")
+        p.className = "classe2"
+        p.innerHTML = "Texto alterado"
+        }
+    </script>
+</body>
+</html>

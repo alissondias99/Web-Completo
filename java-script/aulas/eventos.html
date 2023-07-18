@@ -1,0 +1,168 @@
+<!--Referente as aulas 187 a 190 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: rgb(8, 197, 8);
+        line-height: 100px;
+        text-align: center;
+        }
+    </style>
+</head>
+<body onresize="mudou()" onscroll="rodou()">
+    <h1>Tipos de eventos</h1>
+    <h3>Mouse</h3>
+    <div id="area" onclick="clicou()" ondblclick="clicou2()" onmouseenter="entrou()" 
+    onmouseout="saiu()">interaja
+    </div>
+
+    <script>
+        var d = document.getElementById("area")
+        function saiu(){
+            d.innerText = "Saiu";
+            d.style.background = "green";
+        };
+        
+        function clicou() {
+            d.innerText = "Clicou";
+            d.style.background = "red";
+        }
+
+        function clicou2() {
+            d.innerText = "Clicou x2";
+            d.style.background = "purple";
+        }
+
+        function entrou(){
+            d.innerText = "Entrou";
+            d.style.background = "blue";
+        } 
+    </script>
+    
+    <h3>Teclado</h3>
+    <input type="text"  id="area2" onkeydown="apertou()" onkeyup="soltou()" onkeypress="precionou()" 
+    onmouseout="saiu()">
+    
+
+    <script>
+        var d2 = document.getElementById("area2")
+        function apertou(){
+            alert("apertou");
+            d2.style.background = "green";
+        };
+        
+        function soltou() {
+            alert("soltou");
+            d2.style.background = "red";
+        }
+
+        function precionou() {
+            alert("precionou");
+            d2.style.background = "purple";
+        }
+
+       
+    </script>
+
+    <h3>Tela</h3>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima veritatis deserunt, 
+        doloremque, quo maxime suscipit enim repudiandae neque praesentium voluptatum officia, 
+        optio commodi! Quas aperiam quam assumenda eius, aliquam asperiores quis tempora repellat
+         quia corporis iure necessitatibus libero provident. Id fugit amet nobis maiores enim 
+         dolore, impedit quos dolorem mollitia. Eaque, deleniti officiis inventore voluptas 
+         facilis magnam harum eum! Perferendis reiciendis nihil delectus eum minus exercitationem
+          consequatur nulla molestias cupiditate reprehenderit, atque illum tempore praesentium 
+          non earum corporis fuga nemo ad voluptatibus voluptatum magni neque, quia consequuntur
+           nam. Possimus autem, adipisci velit temporibus iusto ipsa, deserunt qui cumque 
+           explicabo modi officiis, ab accusamus assumenda laboriosam! Voluptatum, nihil 
+           perspiciatis quae sit velit libero labore iste obcaecati animi odio. Reiciendis 
+           dolore obcaecati error amet eum repellat ad, dicta dolorum veniam, in nobis libero 
+           veritatis modi aut sunt vel odit rerum quas laboriosam, architecto quasi deserunt. 
+           Reiciendis nam ullam aut ea tenetur ex repudiandae optio magni ab error nisi et odit 
+           nobis eius excepturi velit in, modi quae tempora unde id, non qui. Voluptatibus dicta 
+           dolorem atque, reiciendis ducimus nostrum rem voluptates similique provident obcaecati
+            architecto! Doloribus, sunt. Odio atque voluptate dolore incidunt nobis ad dolores 
+            culpa distinctio nulla, corrupti aliquid, laudantium quaerat facilis quam aperiam 
+            odit provident nisi facere ipsum reprehenderit expedita totam officia explicabo. Vitae ut, 
+            porro, architecto dignissimos sed quas quam magnam voluptatibus laudantium esse, 
+            accusantium quos. Quam dolore velit vero similique voluptates tenetur ea vitae optio 
+            consequatur porro nemo, magnam veniam assumenda illo labore sint cumque. Modi placeat alias
+             perspiciatis eius dolorum exercitationem incidunt quaerat commodi molestias blanditiis 
+             aspernatur, porro inventore possimus tempora voluptatem explicabo facere magnam totam? 
+             Commodi rerum esse eos tempore natus vel a fugit cupiditate, tenetur omnis sint consectetur 
+             quos dolorem delectus. Tempora ullam reiciendis odio dicta deleniti? Numquam ipsa quaerat 
+             consequatur, maiores, velit ab aperiam quod doloribus deleniti corrupti delectus quo magni 
+             unde neque eius dolor, minus adipisci? Aut minima inventore architecto animi est autem modi 
+             dolores suscipit sequi optio quas porro omnis, expedita iste provident laborum eveniet 
+             pariatur quidem deleniti perferendis harum error non quisquam. Harum laborum nihil 
+             voluptatibus culpa quam aspernatur similique mollitia quia inventore blanditiis? Provident 
+             rerum fugiat sapiente hic in dolorum veritatis odit quo, ratione exercitationem rem impedit 
+             soluta facere, debitis nemo cum nulla omnis nihil! Distinctio, non! Quaerat perferendis non 
+             voluptatibus ab facere aspernatur ratione dolore enim officia alias vero, deserunt reiciendis 
+             pariatur aperiam dicta sequi magnam quo tenetur atque nobis numquam repudiandae tempora 
+             aliquid! Quasi ex aliquid distinctio iste vel amet ratione perferendis iusto iure, sequi 
+             culpa assumenda dolorem modi! Fugit accusantium tenetur iure quos ut iusto voluptates, 
+             saepe amet ipsa numquam labore et ratione libero earum enim non ipsam quibusdam unde totam? 
+             Optio nulla praesentium id eligendi voluptatem, cumque quae voluptates incidunt hic voluptas 
+             animi esse temporibus aperiam necessitatibus numquam doloremque cupiditate dignissimos, 
+             ut rerum sed quis totam! Iusto libero nesciunt eius soluta mollitia delectus molestiae in 
+             recusandae corrupti expedita, illo sint impedit placeat id vel repellendus minus consequatur.
+              Nihil tenetur quis fugiat ex amet exercitationem odit provident illo, beatae doloremque 
+              veritatis dicta sunt delectus, aperiam non sit cum obcaecati voluptate nostrum eligendi 
+              sequi modi voluptates cupiditate! Voluptatem consectetur ex minus officiis sequi ratione, 
+              illum velit consequuntur. Ipsa aperiam recusandae, maiores alias repudiandae corporis, 
+              blanditiis doloremque accusantium tempora consectetur provident, quae ab! Nulla reiciendis 
+              ipsum aspernatur repellendus cumque? Esse ducimus expedita, asperiores pariatur ipsam odit 
+              possimus itaque similique laboriosam in, obcaecati, quis tempora iusto exercitationem error 
+              quae molestiae. Consequuntur deleniti obcaecati enim maxime eveniet qui sequi, eligendi, 
+              dolore eos sapiente culpa ipsum vero voluptatem at omnis, voluptatibus sunt molestias.
+              Nihil tenetur quis fugiat ex amet exercitationem odit provident illo, beatae doloremque 
+              veritatis dicta sunt delectus, aperiam non sit cum obcaecati voluptate nostrum eligendi 
+              sequi modi voluptates cupiditate! Voluptatem consectetur ex minus officiis sequi ratione, 
+              illum velit consequuntur. Ipsa aperiam recusandae, maiores alias repudiandae corporis, 
+              blanditiis doloremque accusantium tempora consectetur provident, quae ab! Nulla reiciendis 
+              ipsum aspernatur repellendus cumque? Esse ducimus expedita, asperiores pariatur ipsam odit 
+              possimus itaque similique laboriosam in, obcaecati, quis tempora iusto exercitationem error 
+              quae molestiae. Consequuntur deleniti obcaecati enim maxime eveniet qui sequi, eligendi, 
+              dolore eos sapiente culpa ipsum vero voluptatem at omnis, voluptatibus sunt molestias.
+              Nihil tenetur quis fugiat ex amet exercitationem odit provident illo, beatae doloremque 
+              veritatis dicta sunt delectus, aperiam non sit cum obcaecati voluptate nostrum eligendi 
+              sequi modi voluptates cupiditate! Voluptatem consectetur ex minus officiis sequi ratione, 
+              illum velit consequuntur. Ipsa aperiam recusandae, maiores alias repudiandae corporis, 
+              blanditiis doloremque accusantium tempora consectetur provident, quae ab! Nulla reiciendis 
+              ipsum aspernatur repellendus cumque? Esse ducimus expedita, asperiores pariatur ipsam odit 
+              possimus itaque similique laboriosam in, obcaecati, quis tempora iusto exercitationem error 
+              quae molestiae. Consequuntur deleniti obcaecati enim maxime eveniet qui sequi, eligendi, 
+              dolore eos sapiente culpa ipsum vero voluptatem at omnis, voluptatibus sunt molestias. 
+            repudiandae quasi optio corporis! Magnam harum ullam impedit error nemo necessitatibus, 
+            quibusdam inventore 
+    </p>
+
+
+    <script>
+
+        function mudou(){
+            alert("O tamanho mudou")
+        }
+
+        function rodou(){
+            alert("Rodou")
+        }
+    
+    </script>
+
+    <h3>Formularios</h3>
+    <input type="text" onfocus="alert('O elemento ganhou o foco')"; onblur=" alert('O elemento perdeu o foco')">
+    <select name="" id="" onchange="alert('O elemento mudou')">
+    <option value="">1</option>
+    <option value="">2</option>
+</select>
+
+</body>
+</html>

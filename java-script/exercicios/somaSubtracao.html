@@ -1,0 +1,33 @@
+<!--Referente a aula 185-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function somaSubtracao (num1, num2, operacao, res){
+          document.write(`${num1} ${operacao} ${num2} = ${res}`)
+        }
+
+         num1 = Number(prompt("Digite o primeiro valor"))
+         num2 = Number(prompt("Digite o segundo valor"))
+         operacao = prompt("Digite 'soma' se quiser somar os dois numeros, ou 'subtrair' se quiser subitrai-los ")
+        if (operacao.toUpperCase() == "SOMA"){
+            operacao = '+'
+            res = num1 + num2
+        } else if (operacao.toUpperCase() == "SUBTRAIR"){
+            operacao = '-'
+            res = num1 - num2
+
+        } else{
+            alert("Valor invalido, recarregue a pagina e tente novamente")
+        }
+
+        somaSubtracao(num1, num2, operacao, res)
+        
+    </script>
+</body>
+</html>
