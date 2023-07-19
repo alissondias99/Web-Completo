@@ -1,0 +1,42 @@
+<!--Exercicios da aula 206-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <input type="text" name="" id="novo_objeto">
+    <input type="button" value="Adcionar" onclick="add()">
+    <input type="button" value="Ordenar" onclick="ord()">
+
+    <script>
+        var objetos = ['Cadeira', 'Impressora', 'Garfo']
+        
+        objetos.sort()
+
+        function add(){
+            var novoObjeto = document.getElementById("novo_objeto")
+            var index = objetos.indexOf(novoObjeto.value)
+            if(index != -1){
+                alert("O item já exite")
+            } else{
+            objetos.unshift(novoObjeto.value)
+            toUpper = function(x){ 
+        return x.toUpperCase();
+        };
+        objetos = objetos.map(toUpper);
+            console.log(objetos)
+            }
+            novoObjeto.value = ''
+            novoObjeto.focus()
+        }
+
+        function ord(){
+            console.log(objetos.sort())
+        }
+    </script>
+</body>
+</html>
