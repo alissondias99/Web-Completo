@@ -1,0 +1,60 @@
+<!--Referete as aulas 118 a 122-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <button onclick="popUp()">Clique</button>
+    <button onclick="fechar()">fechar</button>
+    <button onclick="window.print()">imprimir</button>
+    <hr>
+
+    <button onclick="mudarGuia()">Mudar guia</button>
+    <hr>
+
+
+
+    <script>
+        /*Diferente do DOM, que é usado para manipular os elementos do documento HTML, 
+        o BOM (Browser Object Model) é usado para manipular o próprio navegador, 
+        permitindo o acesso e controle de funcionalidades específicas do navegador, 
+        como cookies, histórico de navegação, janelas do navegador, etc.*/
+
+        //Objeto window
+        var janela
+        function popUp(){
+            janela = window.open('https://www.youtube.com', 'nova guia', 'width=200, height=200')
+        }
+
+        function fechar (){
+            janela.close()
+        }
+
+        //screen
+
+        var altura = window.screen.availHeight;
+        var largura = window.screen.availWidth;
+
+       document.write(altura + 'e' + largura)
+       document.write('<hr>')
+
+       //Location
+       function mudarGuia(){
+        window.location.href = 'https://www.youtube.com'
+       }
+
+       //Timing
+
+       //setTimeout(function() {alert('Essa é uma vez só')}, 2000);
+
+       //setInterval(function() {alert('Essa é repetida')}, 2000);
+
+       var  i = 100
+       setInterval(function() {document.write(i -= 1), document.write('<br>')}, 1000);
+    </script>
+</body>
+</html>
