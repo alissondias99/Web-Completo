@@ -10,24 +10,34 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body onresize="alteraTamanho()">
+<body >
     
     <div id="game-menu">
         <div id="titulo">
             <img src="imagens/game.png" alt="">
         </div>
 
-        <select name="" id="">
+        <select id="nivel">
             <option value="">-- Selecione o nível --</option>
-            <option value="">Facil</option>
-            <option value="">Médio</option>
-            <option value="">Difícil</option>
+            <option value="facil">Facil</option>
+            <option value="medio">Médio</option>
+            <option value="dificil">Difícil</option>
         </select>
 
-        <button class="btn btn-danger btn-lg ">Jogar</button>
+        <button class="btn btn-danger btn-lg " onclick="inicioJogo()">Jogar</button>
 
     </div>
 
-    <script src="script.js"></script>
+    <script>
+        function inicioJogo(){
+            var nivel = document.getElementById('nivel').value
+            if(nivel == ''){
+                alert('Selecione um nível antes de jogar')
+                return false
+            }
+
+            window.location.href = 'jogo.html?' + nivel
+        }
+    </script>
 </body>
 </html>
