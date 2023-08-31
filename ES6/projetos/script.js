@@ -14,7 +14,31 @@ class Despesa{
     }
 }
 
+class Bd {
 
+	constructor() {
+		let id = localStorage.getItem('id')
+
+		if(id === null) {
+			localStorage.setItem('id', 0)
+		}
+	}
+
+	getProximoId() {
+		let proximoId = localStorage.getItem('id')
+		return parseInt(proximoId) + 1
+	}
+
+	gravar(d) {
+		let id = this.getProximoId()
+
+		localStorage.setItem(id, JSON.stringify(d))
+
+		localStorage.setItem('id', id)
+	}
+}
+
+let bd = new Bd()
 function addDespesa(){
         let anoTexto = ano.options[ano.selectedIndex].text;
         let mesTexto = mes.options[mes.selectedIndex].text;
@@ -38,7 +62,7 @@ function addDespesa(){
         }else if(diaValor<=0 || diaValor > 31 || mesTexto == "Fevereiro" && diaValor >28){
             alert("Numero de dia do mês invalido")
         } else{
-            console.log(despesa)
+            bd.gravar(despesa)
         }
 
 }
