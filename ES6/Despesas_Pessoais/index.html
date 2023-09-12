@@ -19,7 +19,7 @@
   <body>
 
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-5">
+    <nav class="navbar navbar-expand-md navbar-dark bg-primary mb-5">
       <div class="container">
         <a class="navbar-brand" href="#">
            <img src="logo.png" width="50" height="35" alt="Orçamento pessoal">
@@ -30,10 +30,10 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
+            <li class="nav-item active">
               <a class="nav-link" href="index.html">Cadastro</a>
             </li>
-            <li class="nav-item active">
+            <li class="nav-item">
               <a class="nav-link" href="consulta.html">Consulta</a>
             </li>
           </ul>
@@ -43,23 +43,25 @@
     </nav>
 
     <div class="container">
-      <div class="row mb-5">
-        <div class="col">
-          <h1 class="display-4">Consulta de despesas</h1>
+      <div class="row">
+        <div class="col mb-5">
+          <h1 class="display-4">Registro de nova despesa</h1>
         </div>
       </div>
 
       <div class="row mb-2">
         <div class="col-md-2">
           <select class="form-control" id="ano">
-            <option value="">Ano</option>
+            <option value="ano">Ano</option>
             <option value="2018">2018</option>
+            <option value="2017">2017</option>
+            <option value="2016">2016</option>
           </select>
         </div>
 
         <div class="col-md-2">
           <select class="form-control" id="mes">
-            <option value="">Mês</option>
+            <option value="mes">Mês</option>
             <option value="1">Janeiro</option>
             <option value="2">Fevereiro</option>
             <option value="3">Março</option>
@@ -76,12 +78,12 @@
         </div>
         
         <div class="col-md-2">
-          <input type="text" class="form-control" placeholder="Dia" id="dia" />
+          <input type="number" min="1" max="31" class="form-control" placeholder="Dia" id="dia" />
         </div>
 
         <div class="col-md-6">
           <select class="form-control" id="tipo">
-            <option>Tipo</option>
+            <option value="tipo">Tipo</option>
             <option value="1">Alimentação</option>
             <option value="2">Educação</option>
             <option value="3">Lazer</option>
@@ -91,41 +93,24 @@
         </div>
       </div>
 
-      <div class="row  mb-5">
+      <div class="row">
         <div class="col-md-8">
           <input type="text" class="form-control" placeholder="Descrição" id="descricao" />
         </div>
 
         <div class="col-md-2">
-          <input type="text" class="form-control" placeholder="Valor" id="valor" />
+          <input type="number" min='0.01'class="form-control" placeholder="Valor" id="valor" />
         </div>
 
         <div class="col-md-2 d-flex justify-content-end">
-          <button type="button" class="btn btn-primary">
-            <i class="fas fa-search"></i>
+          <button type="button" class="btn btn-primary" onclick="addDespesa()">
+            <i class="fas fa-plus"></i>
           </button>
         </div>
       </div>
-
-      <div class="row">
-        <div class="col">
-          <table class="table" >
-            <thead>
-              <tr>
-                <th>Data</th>
-                <th>Tipo</th>
-                <th>Descrição</th>
-                <th>Valor</th>
-                <th></th>
-              </tr>
-            </thead>
-
-            <tbody>
-            </tbody>
-          </table>
-        </div>
-      </div>
     </div>
+
+    <script src="script.js"></script>
   </body>	
 
 </html>
