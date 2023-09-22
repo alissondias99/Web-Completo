@@ -5,7 +5,7 @@ class Despesa{
         this.dia = dia
         this.tipo = tipo
         this.desc = desc
-        this.valo = valor
+        this.valor = valor
     }
 }
 
@@ -29,6 +29,19 @@ class Bd{
         localStorage.setItem(id, JSON.stringify(d))
         localStorage.setItem('id', id)
      }
+
+     recuperarTdsRegistros(){
+        let despesas = Array()
+        let id = localStorage.getItem('id')
+        for( let i = 1 ; i<=id ; i++){
+            let despesa = JSON.parse(localStorage.getItem(i));
+            if (despesa === null){
+                continue
+            }
+            despesas.push(despesa)
+        }
+        return despesas
+     }
 }
 
 let bd = new Bd()
@@ -43,10 +56,11 @@ function addDespesa(){
     let valor = document.getElementById("valor").value;
 
     if (ano == 'ano' || mes== "mes" || tipo == "tipo"){
-        alert("Preencha todas as caixas para continuar")
+        $('#modalErro').modal('show')
     }else if(diaValor <=0 || diaValor > 31 || mes == "2" && diaValor > 28){
-        alert("Numero de dia do mês invalido")
+        $('#modalErroDays').modal('show')
     } else{
+        $('#modalSuccess').modal('show')
         let despesa = new Despesa(
             ano, 
             mes, 
@@ -56,4 +70,20 @@ function addDespesa(){
             valor)
         bd.gravar(despesa)
     }
+}
+
+function carregaListaDespesas(){
+
+    let despesas = Array()
+    despesas = bd.recuperarTdsRegistros()
+    var listaDesesas = document.getElementById("listaDespesas")
+
+    despesas.forEach(function(d){
+        let linha = listaDesesas.insertRow()
+        linha.insertCell(0).innerHTML = `${d.dia}/${d.mes}/${d.ano}`
+        linha.insertCell(1).innerHTML = `${d.tipo}`
+        linha.insertCell(2).innerHTML = `${d.desc}`
+        linha.insertCell(3).innerHTML = `${d.valorGasto}`
+    })
+    console.log(valor)
 }
