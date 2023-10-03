@@ -10,38 +10,33 @@ class Despesa{
 }
 
 class Bd{
-
     constructor(){
         let id = localStorage.getItem('id')
-
         if (id === null){
             localStorage.setItem('id', 0)
         }
     }
-
     getProximoId(){
         let proximoId = localStorage.getItem('id', )//getItem é usado para recuperar um valor
-         return parseInt(proximoId) + 1
-        
+        return parseInt(proximoId) + 1 
     }
     gravar(d){
         let id = this.getProximoId()
         localStorage.setItem(id, JSON.stringify(d))
         localStorage.setItem('id', id)
-     }
-
-     recuperarTdsRegistros(){
-        let despesas = Array()
-        let id = localStorage.getItem('id')
-        for( let i = 1 ; i<=id ; i++){
-            let despesa = JSON.parse(localStorage.getItem(i));
-            if (despesa === null){
-                continue
-            }
-            despesas.push(despesa)
+    }
+    recuperarTdsRegistros(){
+    let despesas = Array()
+    let id = localStorage.getItem('id')
+    for( let i = 1 ; i<=id ; i++){
+        let despesa = JSON.parse(localStorage.getItem(i));
+        if (despesa === null){
+            continue
         }
-        return despesas
-     }
+        despesas.push(despesa)
+    }
+    return despesas
+    }
 }
 
 let bd = new Bd()
@@ -57,7 +52,7 @@ function addDespesa(){
 
     if (ano == 'ano' || mes== "mes" || tipo == "tipo"){
         $('#modalErro').modal('show')
-    }else if(diaValor <=0 || diaValor > 31 || mes == "2" && diaValor > 28){
+    }else if(diaValor <=0 || diaValor > 31 || mes == "02" && diaValor > 28){
         $('#modalErroDays').modal('show')
     } else{
         $('#modalSuccess').modal('show')
@@ -76,14 +71,17 @@ function carregaListaDespesas(){
 
     let despesas = Array()
     despesas = bd.recuperarTdsRegistros()
-    var listaDesesas = document.getElementById("listaDespesas")
+    var listaDespesas = document.getElementById("listaDespesas")
 
     despesas.forEach(function(d){
-        let linha = listaDesesas.insertRow()
+        let linha = listaDespesas.insertRow()
         linha.insertCell(0).innerHTML = `${d.dia}/${d.mes}/${d.ano}`
         linha.insertCell(1).innerHTML = `${d.tipo}`
         linha.insertCell(2).innerHTML = `${d.desc}`
         linha.insertCell(3).innerHTML = `R$ ${d.valor}`
-        console.log(tipo.value)
     })
+}
+
+function pesquisaDespesa(){
+    
 }

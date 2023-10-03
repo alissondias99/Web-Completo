@@ -54,6 +54,8 @@
           <select class="form-control" id="ano">
             <option value="">Ano</option>
             <option value="2018">2018</option>
+            <option value="2017">2017</option>
+            <option value="2016">2016</option>
           </select>
         </div>
 
@@ -76,12 +78,12 @@
         </div>
         
         <div class="col-md-2">
-          <input type="text" class="form-control" placeholder="Dia" id="dia" />
+          <input type="number" min="1" max="31" class="form-control" placeholder="Dia" id="dia"/>
         </div>
 
         <div class="col-md-6">
           <select class="form-control" id="tipo">
-            <option>Tipo</option>
+            <option value="">Tipo</option>
             <option value="1">Alimentação</option>
             <option value="2">Educação</option>
             <option value="3">Lazer</option>
@@ -93,15 +95,15 @@
 
       <div class="row  mb-5">
         <div class="col-md-8">
-          <input type="text" class="form-control" placeholder="Descrição" id="descricao" />
+          <input type="text" class="form-control" placeholder="Descrição" id="descricao"/>
         </div>
 
         <div class="col-md-2">
-          <input type="text" class="form-control" placeholder="Valor" id="valor" />
+          <input type="number" class="form-control" placeholder="Valor" id="valor"/>
         </div>
 
         <div class="col-md-2 d-flex justify-content-end">
-          <button type="button" class="btn btn-primary">
+          <button type="button" class="btn btn-primary" onclick="pesquisaDespesa()">
             <i class="fas fa-search"></i>
           </button>
         </div>
